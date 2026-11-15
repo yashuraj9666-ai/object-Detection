@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webcam Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 style="color:rgb(50, 104, 205)">Live Webcam Detection</h1>
+
+    <!--<img src="{{ url_for('video_feed') }}" width="1400">-->
+    <!-- Buttons -->
+    <button onclick="startWebcam()">Start Webcam</button>
+
+    <button onclick="stopWebcam()">Stop Webcam</button>
+
+    <br>
+
+   
+    <img src="{{ url_for('video_feed') }}" width="1200">
+
+    <script>
+
+        function startWebcam() {
+            document.getElementById("video_feed").src = "/webcam";
+        }
+
+        function stopWebcam() {
+            document.getElementById("video_feed").src = "";
+        }
+
+    </script>
+
+</div>
+
+</body>
+</html>
